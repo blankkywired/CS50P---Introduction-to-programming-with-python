@@ -4,16 +4,18 @@ alphabet_higher = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', '
 #Criar uma função que pegue o indice de uma letra em relação a uma lista de letras 
 # e substituir essa letra pelo mesmo indice porem de uma letra minuscula de outro alfabeto
 
+
 def indoor(text):
     finalText = ""
     splitText = text
     for caracter in splitText:
-        if caracter == "":
-            continue
+        if caracter == " ":
+            finalText += " "
         else:
-            indexChar = alphabet_lower.index(caracter)
-            indexChar = str(indexChar)
-            finalText = finalText + indexChar
-    print(finalText)
-indoor('oi')                       
+            indexChar = alphabet_higher.index(caracter)
+            finalText += alphabet_lower[indexChar]
+    return finalText
+
+name = input()
+print(indoor(name))                      
 
