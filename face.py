@@ -1,8 +1,6 @@
-userInput = input(">")
-characters_list = []
-emote_list = []
-b = []
 
+userInput = input("")
+characters_list = []
 newInput = ""
 
 #Format user input
@@ -15,28 +13,28 @@ for char in userInput:
         continue
 print(newInput)  
 
-#Adicionar characteres dos emotes
-for character in userInput:
-    characters_list.append(character)
-    if character == ":" or character == ")" or character == "(":
-        emote_list.append(character)
+#Separando os characteres e adicionando em uma lista propria
+myList = []
+for char in userInput:
+    if char == ":" or char == ")" or char == "(":
+        myList.append(char)
+#Agrupando characteres para formar emotes
+emoteList = []
+a = ""
+b = []
+if len(myList) % 2 == 0:
+    for i in myList:
+        if myList.index(i) % 2 != 0: #Compara o numero do indice para ver se é um valor par
+            a =  myList[myList.index(i) - 1]
+            a =  a + myList[myList.index(i)]
+            emoteList.append(a)
+print(emoteList)
 
+#Convertendo emotes
+simbol = ""
+for emote in emoteList:
+    if emote == ":)":
+        simbol += "🙂"
+    elif emote == ":(":
+        simbol += "🙁"
 
-
-
-#print(characters_list)
-#print(emote_list)
-a = []
-formateEmote = []
-for simbol in emote_list:
-    formateEmote.append(simbol)
-for i in range(0, 1):
-    if len(formateEmote) % 2 == 0:
-        a.append("".join(formateEmote))
-print(formateEmote)
-#print(characters_list)
-#print(emote_list)
-c , d = formateEmote.index(":") , formateEmote.index(")")
-print(c, d)
-#Pqp eu odeio viver
-for i in range(len(formateEmote)):
