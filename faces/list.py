@@ -1,4 +1,5 @@
-myList = [":", ")" , ":", "(" , ":" , ")" ]
+myList = ["hello", "world", "cs50p" , ":"]
+# myList = [":", ")" , ":", "(" , ":" , ")" ]
 #To-do
 #Agrupar os characteres em pares caso o tamanho da lista seja um valor par
 #Cada par de caracteres deve ter um indice dentro da lista

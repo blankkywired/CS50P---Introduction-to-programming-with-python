@@ -1,23 +1,20 @@
 
 userInput = input("")
-characters_list = []
 newInput = ""
 
+
 #Format user input
+myList = []
 for char in userInput:
     if char == " ":
         newInput += " "
     elif char != ":" and char != ")" and char != "(":
         newInput += char
     else:
-        continue
+        myList.append(char)
+        
 print(newInput)  
 
-#Separando os characteres e adicionando em uma lista propria
-myList = []
-for char in userInput:
-    if char == ":" or char == ")" or char == "(":
-        myList.append(char)
 #Agrupando characteres para formar emotes
 emoteList = []
 a = ""
@@ -28,13 +25,17 @@ if len(myList) % 2 == 0:
             a =  myList[myList.index(i) - 1]
             a =  a + myList[myList.index(i)]
             emoteList.append(a)
+            
 print(emoteList)
 
-#Convertendo emotes
-simbol = ""
-for emote in emoteList:
-    if emote == ":)":
-        simbol += "🙂"
-    elif emote == ":(":
-        simbol += "🙁"
+for char in userInput:
+    if char == " ":
+        newInput += " "
+    elif char != ":" and char != ")" and char != "(":
+        newInput += char
+    else:
+        newInput += emoteList[emoteList.index(char)]
 
+    
+text = userInput.split()
+print(newInput)
