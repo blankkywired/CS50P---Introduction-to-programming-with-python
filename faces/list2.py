@@ -25,18 +25,16 @@ wordsList = []
 
 word = ""
 score = 0
-while indexCharacter <= splitInList.index(splitInList[-1]):
-    #print(splitInList[indexCharacter])
+while indexCharacter <= splitInList.index(splitInList[-1]): #basicamente um laço de repetição for
+    print(splitInList[indexCharacter])
     if splitInList[indexCharacter] == " ":
         word = ""
         wordsList.append(word)
-    while score <= indexChar:
+
+    elif splitInList[indexCharacter] != " ":
         word += splitInList[indexCharacter]
-        if indexCharacter == score:
+        if indexCharacter == splitInList.index(splitInList[-1]):
             wordsList.append(word)
-        score += 1
-
-
     else:
         word += splitInList[indexCharacter] #Vai adicionando cada letra para a string 
         if indexCharacter == splitInList.index(splitInList[-1]):
