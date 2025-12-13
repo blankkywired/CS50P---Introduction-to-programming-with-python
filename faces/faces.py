@@ -1,7 +1,9 @@
 name = input()
+
 def faces(input):
-    
-    x = name.replace(":(", "🙁")
-    x = name.replace(":)", "🙂")
+        
+    x = input.replace(":)", "🙂").replace(":(", "🙁")
     return x
+    
+        
 print(faces(name))
