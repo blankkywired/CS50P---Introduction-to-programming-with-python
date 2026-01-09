@@ -5,3 +5,4 @@ name = input("What's your name?:").strip().title()  #--> .strip() method remove 
 #\n ==> pula uma linha
 print('hello,' , end="")
 print(name)
+
