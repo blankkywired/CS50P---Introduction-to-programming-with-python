@@ -1,23 +1,22 @@
 userInput = input('camelCase: ')
 
 list_chars = []
-def generate_list(str):
+def generate_list():
     """Take the user input and generate a list of each character"""
-    for letter in str:
+    for letter in userInput:
         list_chars.append(letter)
     return list_chars
 
-positions = [] 
-def find_index_char(list):
-    """Find uppercase letter position in a list"""
+
+def convert(list):
+    new_list = []   
     for char in list:
         if char.isupper():
-            positions.append(list.index(char))
+            char = char.lower()
+            new_list.append("_")
+            new_list.append(char)
         else:
-            continue
-    return positions
-print(find_index_char(generate_list(userInput)))
-
-new_list_replace = []
-def replace_upper(list):
-
+            new_list.append(char)
+    new_list = "".join(new_list)
+    return new_list
+print(convert(userInput))
